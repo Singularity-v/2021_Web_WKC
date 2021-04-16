@@ -1,38 +1,266 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@import '~antd/dist/antd.css';
+/* RWD Container */
+.container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-self: center;
+  margin: auto;
+}
+
+@media (min-width: 576px) {
+.container {
+  width: 540px;
+}
+} 
+
+@media (min-width: 768px) {
+.container {
+  width: 720px;
+}
+} 
+
+@media (min-width: 992px) {
+.container {
+  width: 960px;
+}
+} 
+
+@media (min-width: 1200px) {
+.container {
+  width: 1140px;
+}
+} 
+
+
+@media (min-width: 1600px) {
+.container {
+  width: 1500px;
+}
+} 
+/*layout*/
+.layout-header,
+.main-layout{
+  background-color: #fff;
+}
+
+.opacity-2 {
+  opacity: 0.4;
+}
+
+.opacity-3 {
+  opacity: 0.6;
+}
+
+
+/*header*/
+.header{
+  padding-top: 10px;
+  display: flex;
+  width:100%;
+  justify-content:center;
+}
+.header-title{
+  color:#FFC72D;
+}
+.header-icon{
+  display: flex;
+  justify-content: space-around;
+  width:200px;
+  height:27px;
+}
+.header-content{
+  width:1300px;
+}
+.header-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width:500px;
+  color:#000000;
+}
+.menu1{
+  display:inline;
+}
+.header-pic{
+  width:100%;
+}
+/*product*/
+.product{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.product1{
+  justify-content: center;
+  width:1080px;
 }
 
-.App-link {
-  color: #61dafb;
+.border1{
+  border-color: #FFC72D;
+  border-style: solid;
+  box-shadow:  0px 3px 6px #00000029;
+}
+.bg{
+  /*background-color: #FFF7E1;*/
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.hr-header-line {
+  margin: 25px auto 30px;
+  padding: 0;
+  width: 100px;
+  border: 0;
+  border-top: solid 6px;
+  border-color: #6366F2;
+  opacity: 1;
+}
+
+.hr-footer-line {
+  margin: 25px auto 30px;
+  padding: 0;
+  width: 300px;
+  border: 0;
+  border-top: solid 2px;
+  border-color: #3e3f97;
+  opacity: 1;
+}
+
+
+.text-color-1 {
+  color: #8183ff;
+}
+/*footer*/
+.layout-footer{
+  padding:0px;
+  
+}
+.footer{
+  margin:4rem;
+  width:1080px;
+  margin:0px;
+}
+.footer-up{
+  display: flex;
+  background-color: #FFC72D;
+  justify-content: center;
+}
+.subscribe{
+  margin-right: 0px;
+  width:800px;
+ 
+ 
+}
+.subscribe-title{
+  color:#fff;
+  display:flex;
+  justify-content:flex-start;
+}
+.subscribe-subtitle{
+  color:#426393;
+  display:flex;
+  justify-content: flex-start;
+}
+.subscribe-box{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.box{
+  width:100%;
+  display:flex;
+  justify-content: flex-start;
+}
+.subscribe-box input#search{
+  width: 400px;
+  height: 40px;
+  background: #fff;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #fff;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.subscribe-btn{
+  border: none;
+  background: #426393;
+  height: 40px;
+  width: 100px;
+  color: #fff;
+  font-size: 10pt;
+  border-radius: 5px;
+}
+.footer-icon {
+  width: 200px;
+  height: 20rem;
+}
+.ig{
+  width: 20px;
+  height:20px;
+}
+/*product-detail*/
+.detail-container{
+  width: 100%;
+}
+
+.product-image {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.ant-col-lg-17{
+  width:100%;
+
+}
+.btn-tocar{
+
+  background-color: #426393;
+  width:400px;
+  height:40px;
+  border-radius: 0.3rem;
+}
+
+/* .Description-detail{
+  width:800px;
+} */
+
+.description{
+  width: 75px;
+  margin-bottom:0px;
+  font-weight: bold;
+  border-bottom: 2px solid #FFC72D;
+}
+
+
+.products-image{
+  width:200px;
+  height:200px;
+}
+.arrow{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+} 
+.related-btn1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFC72D;
+  width:50px;
+  height:74px;
+  border-color:#FFC72D; 
+  border-radius: 0.3rem;
+
+}
+.related-arrow{
+  width:24px;
+  height:24px;
+}
+.ant-layout-footer{
+  background: #fff;
 }

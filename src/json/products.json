@@ -1,0 +1,57 @@
+[
+    {
+        "id":"1",
+        "image":"https://i.pinimg.com/564x/03/3b/9a/033b9ad1772b989809582a87f25e6006.jpg",
+        "name":" Sea on Concrete Wall Clock",
+        "author":" Design by cafelab",
+        "color":["Black", "White", "Red"] ,
+        "countInStock":6,
+        "description": "Good times! Rethink the traditional timepiece as functional wall decor. You’ll love how our Artists are converting some of their coolestdesigns specifically into Wall Clocks. Constructed with premium, shatter-resistant materials, with three frame color options.",
+        "descriptionlong1":"Natural wood, black or white frame options",
+        "descriptionlong2":"Dimensions: 10” diameter, 1.75” depth",
+        "descriptionlong3":"Choose black or white hands to match frame or design",
+        "descriptionlong4":"High-impact plexiglass crystal face",
+        "descriptionlong5":"Backside hook for easy hanging",
+        "detailproduct1":"https://i.pinimg.com/564x/43/72/0f/43720fc5e887e6b041ad8f0e7f4c1ebb.jpg",
+        "detailproduct2":"https://i.pinimg.com/564x/e9/b9/99/e9b999d3f4fa1f017a531650db02d645.jpg",
+        "detailproduct3":"https://i.pinimg.com/564x/5f/b7/b2/5fb7b2e25d672ff463cfbfa8a8e168cb.jpg",
+        "detailproduct4":"https://i.pinimg.com/564x/67/52/06/675206561d25bb9c888e28a00337eb76.jpg"
+    },
+    
+    {
+        "image":"https://i.pinimg.com/564x/98/a2/14/98a214ea96aeaa12abc6e79727eafa92.jpg",
+        "name":" Crosshatch Side Chair",
+        "author":" Designed by EOOS"
+    },
+    {
+        "image":"https://i.pinimg.com/564x/bf/b7/48/bfb74855fa6849a74fd65bb0e528c45c.jpg",
+        "name":" Crosshatch Side Chair",
+        "author":" Design by cafelab"
+    },
+    {
+        "image":"https://i.pinimg.com/564x/c7/58/1e/c7581efa4cc34eba3dc44d3dfbc86863.jpg",
+        "name":" Sea on Concrete Wall Clock",
+        "author":" Designed by EOOS"
+    },
+    {
+        "image":"https://i.pinimg.com/564x/03/3b/9a/033b9ad1772b989809582a87f25e6006.jpg",
+        "name":" Sea on Concrete Wall Clock",
+        "author":" Design by cafelab"
+        
+    },
+    {
+        "image":"https://i.pinimg.com/564x/98/a2/14/98a214ea96aeaa12abc6e79727eafa92.jpg",
+        "name":" Crosshatch Side Chair",
+        "author":" Designed by EOOS"
+    },
+    {
+        "image":"https://i.pinimg.com/564x/bf/b7/48/bfb74855fa6849a74fd65bb0e528c45c.jpg",
+        "name":" Crosshatch Side Chair",
+        "author":" Design by cafelab"
+    },
+    {
+        "image":"https://i.pinimg.com/564x/c7/58/1e/c7581efa4cc34eba3dc44d3dfbc86863.jpg",
+        "name":" Sea on Concrete Wall Clock",
+        "author":" Designed by EOOS"
+    }
+]
