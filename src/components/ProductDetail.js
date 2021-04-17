@@ -10,19 +10,19 @@ function ProductDetail({product}) {
     const [color, setColor] = useState();
 
    return (
-       
-    <div className="detail-container mt-4">
-        <Row className="d-flex justify-content-center m-0"gutter={[32, 32]}>
-            <Col className="d-flex align-items-center p-0" lg={{ span: 10 }}>
+    <div> 
+         {/* className="detail-container" */}
+        <Row className=" shop-container " gutter={[32, 32]}>
+            <Col  lg={{ span: 11 }} >
             <img
                 alt=""
-                className="product-image"
+                className="product-top-image"
                 src={product.image}
             />
                 
             </Col>
-            <Col className="d-flex align-items-center " lg={{span:10, offset:1}}>
-                <div >
+            <Col  className="shop-top-right" lg={{span:8, offset:1}} xs={{ span:18 }}>
+                <div className="shop-top-right-container">
                     <h2 className="product-name">
                         {product.name}
                     </h2>    
@@ -31,16 +31,17 @@ function ProductDetail({product}) {
                     </p>
                     <p>$25.59</p>
                     <p className="product-status">
-                    Status: {product.countInStock > 0 ? "In Stock" : "Unavailable."}
-                </p>
-                <p className="product-color">
-                    <p> Color</p>
+                        Status: {product.countInStock > 0 ? "In Stock" : "Unavailable."}
+                    </p>
+                    <p className="product-color">
+                        <p> Color</p>
                         {"   "}
                         <Select 
                             defaultValue={color} 
                             placeholder="Select color"
-                            className="select-style"
+                            className="select-style shop-top-right-container"
                             onChange={val=>setColor(val)}
+                            size="large"
                         >
                             {[...Array(product.color.length).keys()].map((x) => (
                                 <Option value={product.color[x]}>
@@ -49,13 +50,14 @@ function ProductDetail({product}) {
                             ))}
                         </Select>
                     </p>
-                    <div>
-                            <p className="product-qty">
+                    <div >
+                        <p className="product-qty">
                             <p>QUANTITY </p>
                             {"   "}
                             <Select 
                                 defaultValue={product.countInStock > 0 ? 1 : 0} 
                                 className="select-style"
+                                size="large"
                             >
                                 {[...Array(product.countInStock).keys()].map((x) => (
                                     <Option key={x + 1} value={x + 1}>
@@ -65,57 +67,55 @@ function ProductDetail({product}) {
                             </Select>
                         </p>
                     </div>
-                <AddToCart />
+                    <AddToCart />
                 </div>
+
             </Col>
         </Row>
-        <div className="detail-container mt-5">
-            <Row className="d-flex justify-content-center" gutter={[32, 32]}>
-                <Col lg={{span:21}}>
+        <div className="shop-container">
+            <Row className=" shop-top-right " gutter={[32, 32]}>
+                <Col lg={{span:20}}>
                     <p className="description">Description</p>
-                    <p className="mt-3 product-description">{product.description}</p>
+                    <p >{product.description}</p>
 
-                    <p className="product-description.long">{product.descriptionlong1}</p>
-                    <p className="product-description.long">{product.descriptionlong2}</p>
-                    <p className="product-description.long">{product.descriptionlong3}</p>
-                    <p className="product-description.long">{product.descriptionlong4}</p>
-                    <p className="product-description.long">{product.descriptionlong5}</p>
+                    <li className="product-description.long">{product.descriptionlong1}</li>
+                    <li className="product-description.long">{product.descriptionlong2}</li>
+                    <li className="product-description.long">{product.descriptionlong3}</li>
+                    <li className="product-description.long">{product.descriptionlong4}</li>
+                    <li className="product-description.long">{product.descriptionlong5}</li>
                 </Col>
             </Row>
         </div>
-        <div className="m-4  d-flex flex-direction-row justify-content-space-between related-products">
-            <Row className="d-flex justify-content-center p-0 "gutter={[32, 32]}>
-                <Col className=" d-flex justify-content-start p-0 " >
-                    <section className="arrow pl-0 pr-0  " lg={{span:2}}>
-                        <button type="button" className="related-btn1"> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-privious.png"/></button>
-                    </section>
+            <Row className="shop-container related-products" gutter={[32, 32]}>
+                <Col lg={{span:1}} >
+
+                    <button type="button" className="related-btn"> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-privious.png"/></button>
+
                 </Col>
-                <Col className=" m-0 text-left" lg={{span:20}}>
-                     <div className="d-flex flex-direction-row">
-                         <section className="col  pl-0">
+                <Col className="nop" lg={{span:18}}>
+                    <div className="related-products-images">
+                        <Col  lg={{span:6}}>
                             <img className="products-image" src={product.detailproduct1}/>
-                        </section>
-                        <section className="col  pl-0 ">
+                        </Col>
+                        <Col  lg={{span:6}}>
                             <img className="products-image" src={product.detailproduct2}/>
-                        </section>
-                        <section className="col  pl-0 ">
+                        </Col>
+                        <Col  lg={{span:6}}>
                             <img className="products-image" src={product.detailproduct3}/>
-                        </section>
-                        <section className="col  pl-0 ">
+                        </Col>
+                        <Col  lg={{span:6}}>
                             <img className="products-image" src={product.detailproduct4}/>
-                        </section> 
+                        </Col>
                     </div> 
                 </Col>
-                <Col className=" arrow" lg={{span:2}} >
-                    <section className="d-flex align-items-center pl-0 pr-0">
-                        <button type="button" className="related-btn1"> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-next.png"/></button>
-                    </section>
+                <Col  lg={{span:1}} >
+                    <div className="btn2">
+                        <button type="button" className="related-btn "> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-next.png"/></button>
+                    </div>
+                       
+
                 </Col>
             </Row>
-        </div>
-            
-                
-            
       </div>
    );
 }
