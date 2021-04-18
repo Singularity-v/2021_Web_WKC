@@ -8,12 +8,12 @@ const { Option } = Select;
 
 function ProductDetail({product}) {
     const [color, setColor] = useState();
-
+    const [qty, setQty] = useState(product.countInStock > 0 ? 1 : 0);
+    
    return (
-    <div >  
-         {/* className="detail-container" */}
+    <div className="detail-container">  
         <Row className=" shop-container " >
-            <Col  lg={{ span: 11 }} >
+            <Col  lg={{ span: 11 }} sm={{ span: 20 }} xs={{ span:24 }}>
             <img
                 alt=""
                 className="product-top-image"
@@ -21,7 +21,7 @@ function ProductDetail({product}) {
             />
                 
             </Col>
-            <Col  className="shop-top-right" lg={{span:8, offset:1}} xs={{ span:18 }}>
+            <Col  className="shop-top-right" lg={{span:7, offset:1}} sm={{ span: 17 }} xs={{ span:18 }}>
                 <div className="shop-top-right-container">
                     <h2 className="product-name">
                         {product.name}
@@ -74,8 +74,8 @@ function ProductDetail({product}) {
         </Row>
         <div className="shop-container">
             <Row className=" shop-top-right " gutter={[32, 32]}>
-                <Col lg={{span:20}}>
-                    <p className="description">Description</p>
+                <Col lg={{span:19}} sm={{ span: 18}} xs={{ span:19 }}>
+                    <h5 className="description">Description</h5>
                     <p >{product.description}</p>
 
                     <li className="product-description.long">{product.descriptionlong1}</li>
@@ -86,24 +86,28 @@ function ProductDetail({product}) {
                 </Col>
             </Row>
         </div>
-            <Row className="shop-container related-products" gutter={[32, 32]}>
+        <div className="related-products-container">
+            <hr className="related-products"></hr>
+            <h5 style={{ margin:"0" }}>Related Products</h5>
+            <hr className="related-products"></hr>
+            <Row className="shop-container" gutter={[16, 32]}>
+            
                 <Col lg={{span:1}} >
-
                     <button type="button" className="related-btn"> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-privious.png"/></button>
-
                 </Col>
-                <Col className="nop" lg={{span:18}}>
+                <Col lg={{ span:17 }} sm={{ span:16 }} xs={{ span:16 }}>
                     <div className="related-products-images">
-                        <Col  lg={{span:6}}>
+                        <Col  lg={{span:6}} sm={{span:12}} id="photo">
+                            
                             <img className="products-image" src={product.detailproduct1}/>
                         </Col>
-                        <Col  lg={{span:6}}>
+                        <Col  lg={{span:6}} sm={{span:12}} xs={{ span:0 }}>
                             <img className="products-image" src={product.detailproduct2}/>
                         </Col>
-                        <Col  lg={{span:6}}>
+                        <Col  lg={{span:6}} sm={{span:0}} xs={{ span:0 }}>
                             <img className="products-image" src={product.detailproduct3}/>
                         </Col>
-                        <Col  lg={{span:6}}>
+                        <Col  lg={{span:6}} sm={{span:0}} xs={{ span:0 }}>
                             <img className="products-image" src={product.detailproduct4}/>
                         </Col>
                     </div> 
@@ -112,10 +116,13 @@ function ProductDetail({product}) {
                     <div className="btn2">
                         <button type="button" className="related-btn "> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-next.png"/></button>
                     </div>
-                       
-
                 </Col>
             </Row>
+        </div>
+
+        
+
+            
       </div>
    );
 }
