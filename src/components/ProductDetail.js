@@ -10,9 +10,9 @@ function ProductDetail({product}) {
     const [color, setColor] = useState();
 
    return (
-    <div> 
+    <div >  
          {/* className="detail-container" */}
-        <Row className=" shop-container " gutter={[32, 32]}>
+        <Row className=" shop-container " >
             <Col  lg={{ span: 11 }} >
             <img
                 alt=""

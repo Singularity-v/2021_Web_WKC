@@ -11,18 +11,17 @@ function Home(){
     return(
         <div>
         <Layout className=" main-layout">
-            
-                <Header className="layout-header">
-                    <AppHeader title={title}/>
-                </Header>
-                <Content classNmae="layout-content">
-                    <ProductList />
-                </Content>
+            <Header className="layout-header">
+                <AppHeader title={title}/>
+            </Header>
+            <Content classNmae="layout-content">
+                <ProductList />
+            </Content>
             </Layout> 
             <Layout>
-            <Footer className="layout-footer">
-                <AppFooter />
-            </Footer>
+                <Footer className="layout-footer">
+                    <AppFooter />
+                </Footer>
             </Layout>
         </div>
    

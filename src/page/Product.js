@@ -11,7 +11,7 @@ function Product({ match }) {
       (x) => x.id === match.params.productId
    );
    return (
-      <Layout className="container main-layout">
+      <Layout className=" main-layout">
          <Header className="layout-header">
             <AppHeader title="Product Detail"/>
          </Header>
