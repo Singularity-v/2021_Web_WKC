@@ -25,10 +25,10 @@ export default function Footer(){
                         </div>
                         <div className=" footer-container  footer-down-right">
                             <div className="icons ">
-                                <img className="footer-icon" src="https://raw.githubusercontent.com/shakuneko/icon/master/instergram.png"/>
-                                <img className="footer-icon" src="https://raw.githubusercontent.com/shakuneko/icon/master/fb.png"/>
-                                <img className="footer-icon" src="https://raw.githubusercontent.com/shakuneko/icon/master/twitter.png"/> 
-                                <img className="footer-icon" src="https://raw.githubusercontent.com/shakuneko/icon/master/pinterest.png"/> 
+                                <img className="footer-icon" src="https://raw.githubusercontent.com/shakuneko/icon/master/instergram.png" alt=" "/>
+                                <img className="footer-icon" src="https://raw.githubusercontent.com/shakuneko/icon/master/fb.png" alt=" "/>
+                                <img className="footer-icon" src="https://raw.githubusercontent.com/shakuneko/icon/master/twitter.png" alt=" "/> 
+                                <img className="footer-icon" src="https://raw.githubusercontent.com/shakuneko/icon/master/pinterest.png" alt=" "/> 
                             </div> 
                             <div className=" icons ">
                                 <div className="footer-options">

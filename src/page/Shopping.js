@@ -1,4 +1,3 @@
-import { useContext,useEffect } from "react";
 import { Layout } from 'antd';
 import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"

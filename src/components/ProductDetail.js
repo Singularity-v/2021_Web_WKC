@@ -9,7 +9,6 @@ const { Option } = Select;
 
 
 function ProductDetail({product}) {
-    const { dispatch } = useContext(StoreContext);
     const [qty, setQty] = useState(product.countInStock > 0 ? 1 : 0);
     const [color, setColor] = useState();
 
@@ -101,16 +100,16 @@ function ProductDetail({product}) {
                     <div className="related-products-images">
                         <Col  lg={{span:6}} sm={{span:12}} id="photo">
                             
-                            <img className="products-image" src={product.detailproduct1}/>
+                            <img className="products-image" src={product.detailproduct1} alt=""/>
                         </Col>
                         <Col  lg={{span:6}} sm={{span:12}} xs={{ span:0 }}>
-                            <img className="products-image" src={product.detailproduct2}/>
+                            <img className="products-image" src={product.detailproduct2} alt=""/>
                         </Col>
                         <Col  lg={{span:6}} sm={{span:0}} xs={{ span:0 }}>
-                            <img className="products-image" src={product.detailproduct3}/>
+                            <img className="products-image" src={product.detailproduct3} alt=""/>
                         </Col>
                         <Col  lg={{span:6}} sm={{span:0}} xs={{ span:0 }}>
-                            <img className="products-image" src={product.detailproduct4}/>
+                            <img className="products-image" src={product.detailproduct4} alt="" />
                         </Col>
                     </div> 
                 </Col>

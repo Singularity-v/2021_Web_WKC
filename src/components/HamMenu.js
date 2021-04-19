@@ -35,9 +35,9 @@ export default function HamMenu({  visible, onClose })    {
                     </NavLink>
                 </div>
                 <div className=" ham-menu-icons ">
-                    <img className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-search.png"/>
-                    <img className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-account.png"/>
-                    <img className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-cart.png"/> 
+                    <img className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-search.png" alt=" "/>
+                    <img className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-account.png" alt=" "/>
+                    <img className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-cart.png" alt=" "/> 
                 </div>
             </Drawer>
             
