@@ -70,7 +70,7 @@ export default function CartModal({ isModalVisible, toggleModal,product }) {
                                     defaultValue={item.color} 
                                     placeholder="Select color"
                                     className="select-style cart-top-right-container"
-                                    onChange={val=>setColor(val)}
+                                    // onChange={val=>setColor(val)}
                                     size="large"
                                  >
                                  {[...Array(item.color.length).keys()].map((x) => (
