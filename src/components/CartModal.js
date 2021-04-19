@@ -10,7 +10,7 @@ const { Option } = Select;
 export default function CartModal({ isModalVisible, toggleModal,product }) {
    const { state: { cartItems }, dispatch } = useContext(StoreContext);
    const handleCancel = () => toggleModal(!isModalVisible);
-   const [color, setColor] = useState();
+   // const [color, setColor] = useState();
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)

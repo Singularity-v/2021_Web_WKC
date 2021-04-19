@@ -34,7 +34,6 @@ export default function Footer(){
                                 <div className="footer-options">
                                     <ul className="footer-about">
                                         <li style={{marginBottom:"0.5rem"}}><a className="options-title">ABOUT</a></li>
-                                        <li><a className="options"/></li>
                                         <li><a className="options">About Us</a></li>
                                         <li><a className="options">Newsletter</a></li>
                                         <li><a className="options">Wholesale Program</a></li>
