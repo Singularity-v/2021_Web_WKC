@@ -23,41 +23,33 @@ export default function CartModal({ isModalVisible, toggleModal,product }) {
      }, [cartItems])
 
    return (
-      // <Modal
-      //    title="Shopping Bag"
-      //    visible="true"
-      //    onCancel={handleCancel}
-      //    footer={null}
-      // >
-      <>
-      <div className="shopping-container">
-            <p className="shopcart">Shop Cart</p>
-            <p className="shopping-title-product">PRPDUCT</p>
-            <div className="cart-item-title">
-               <div className="cart-item-title2">
-                  <p className="shopping-item-content">Color</p>
-                  <p className="shopping-item-content">Quantity</p>
-                  <p className="shopping-item-content">Price</p>
+      <div className=" shopcart-container " >
+            <div className="shopping-container">
+               <h4 className="shopcart">Shop Cart</h4>
+               <h4 className="shopping-title-product">Product</h4>
+               <div className="cart-item-title">
+                  <div className="cart-item-title2">
+                     <p className="shopping-item-content">Color</p>
+                     <p className="shopping-item-content">Quantity</p>
+                     <p className="shopping-item-content">Price</p>
+                  </div>
                </div>
+
             </div>
-         </div>
-         {cartItems.length === 0 ? (
-            <div className="noproduct" >
-               <div className="noproduct2">
-                  <div className="noproduct-icon"><FrownOutlined  style={{ fontSize: '72px', color: '#426393' }} /></div>
-                  <div className="noproduct-word">You Have 0 Items In Your Cart</div>
-                  
-               </div>
-            </div>
-            
-            
-         ) : (
+            {cartItems.length === 0 ? (
+               <div className="noproduct" >
+                  <div className="noproduct2">
+                     <div className="noproduct-icon"><FrownOutlined  style={{ fontSize: '72px', color: '#426393' }} /></div>
+                     <div className="noproduct-word">You Have 0 Items In Your Cart</div>
+                  </div>
+               </div>               
+            ) : (
             cartItems.map(item => (
                <div className="shopping-container1">
                   <li key={item.id} className="cart-item">
                      
-                     <Link to={`/product/${item.id}`}>
-                        <div className="cart-image" onClick={()=>{
+                     <Link to={`/product/${item.id}`} className="cart-image">
+                        <div  onClick={()=>{
                            setProductDetail(dispatch, item.id, item.qty,);
                            handleCancel();
                         }}>
@@ -65,37 +57,40 @@ export default function CartModal({ isModalVisible, toggleModal,product }) {
                         </div>
                      </Link>
                      
-                           <div className="cart-item-content">
-                              <div className="shopping-name">
-                                 <div className="cart-name">{item.name}</div>
-                                 <div className="cart-author-name">{item.author}</div>
-                              </div>
-                           
-                              <div className="shopping-content">
+                     <div className="cart-item-content">
+                        <div className="shopping-name">
+                           <h5 className="cart-name">{item.name}</h5>
+                           <div className="cart-author-name">{item.author}</div>
+                        </div>
+
+                        <div className="option-container">
+                           <div className="shopping-content">
                               <div className="shopping-content-color">
                                  {"   "}
                                  <Select 
                                     defaultValue={item.color} 
                                     placeholder="Select color"
-                                    className="select-style shop-top-right-container"
+                                    className="select-style cart-top-right-container"
                                     onChange={val=>setColor(val)}
+                                    size="large"
                                  >
-                              {[...Array(item.color.length).keys()].map((x) => (
-                                 <Option value={item.color[x]}>
-                                 {item.color[x]}
-                                 </Option>
-                              ))}
-                           </Select>
+                                 {[...Array(item.color.length).keys()].map((x) => (
+                                    <Option value={item.color[x]}>
+                                    {item.color[x]}
+                                    </Option>
+                                 ))}
+                              </Select>
                               </div>
+
                               <div  className="shopping-qty">
-                                 
-                              <div className="product-qty">
+                                 <div className="product-qty ">
                                     {"   "}
                                        <Select
                                           defaultValue={item.qty}
                                           value={item.qty}
-                                          className="select-style"
+                                          className="select-style cart-top-center-container"
                                           onChange={(qty) => addCartItem(dispatch, item, qty)}
+                                          size="large"
                                        >
                                           {[...Array(item.countInStock).keys()].map((x) => (
                                              <Option key={x + 1} value={x + 1}>
@@ -103,54 +98,58 @@ export default function CartModal({ isModalVisible, toggleModal,product }) {
                                              </Option>
                                           ))}
                                        </Select>
-                                    </div>
-                              </div>
-                              </div>
-                              <div className="shopping-content2">
-                              <div className="shopping-content-price">
-                              <div className="">
-                                 
-                              </div>
-                                 <div className="">
-                                    ${item.price * item.qty}
-                                    </div>
-                              </div>
-                              
-                                    <div className="cart-item-end">
-                                       <div className="cart-item-delete" onClick={() => removeCartItem(dispatch, item.id)}>
-                                          x
-                                       </div>
-                                    </div>
                                  </div>
                               </div>
-                     </li>
-                  </div>
-                  ))
-               )}
-               <div className="shopping-container2">
-                  <div className="cart-total">
-                     <div className="cart-total-price-wrap">
-                        <div className="cart-total-price-wrap2">
-                        <p className="total">TOTAL :</p>
-                           <div className="cart-total-price">${getTotalPrice()}</div>
+                           </div>
+                           <div className="shopping-content2">
+                              <div className="shopping-content-price">
+
+                                 <div className="cart-price">
+                                    ${item.price * item.qty}
+                                 </div>
+                              </div>
+                           
+                              <div className="cart-item-end">
+                                 <div className="cart-item-delete" onClick={() => removeCartItem(dispatch, item.id)}>
+                                    x
+                                 </div>
+                              </div>
+                           </div>
                         </div>
+
+
                      </div>
-                        <div className="cart-total-botton">
-                        <Link to={"/"}>
-                           <Button 
-                              className="cart-modal-btn-left" type="primary" > 
-                              <span>Continue Shopping</span>
-                           </Button>
-                        </Link>
+                  </li>
+               </div>
+             ))
+            )}
+            <div className="shopping-container2">
+               <div className="cart-total">
+                  <div className="cart-total-price-wrap">
+                     <div className="cart-total-price-wrap2">
+                        <p className="total">TOTAL :</p>
+                        <div className="cart-total-price">${getTotalPrice()}</div>
+                     </div>
+                  </div>
+                  <div className="cart-btn">
+                     <Link to={"/"} className="cart-btn1" >
+                        <Button 
+                           className="cart-modal-btn-left" type="primary" > 
+                           <span>Continue Shopping</span>
+                        </Button>
+                     </Link>
+                     <Link className="cart-btn2">
                         <Button
                            className="cart-modal-btn-right  " type="warning" danger>
                            <span>Checkout</span>
                         </Button>
-                        </div>
-                     </div>
+                     </Link>
+
+                  </div>
                </div>
-               
-               </>
+            </div>
+            
+       </div>
             
    );
 }  

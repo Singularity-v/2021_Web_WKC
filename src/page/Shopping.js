@@ -11,12 +11,12 @@ function Shopping() {
    
   return (
     <div>
-    <Layout className="container main-layout">
+    <Layout className="main-layout">
         
             <Header className="layout-header">
             <AppHeader title="Your Home" />
             </Header>
-            <Content classNmae="layout-content">
+            <Content classNmae="layout-content" style={{ display:"flex", justifyContent:"center"}}>
               <CartModel/>  
             </Content>
         </Layout> 

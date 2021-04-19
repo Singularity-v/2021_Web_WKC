@@ -54,8 +54,8 @@ function ProductDetail({product}) {
                         </Select>
                     </p>
                     <div>
-                            <p className="product-qty">
-                            <p>QUANTITY </p>
+                        <p className="product-detail-qty">
+                            <p>Quantity </p>
                             {"   "}
                             <Select 
                                 defaultValue={qty} 
