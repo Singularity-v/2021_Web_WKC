@@ -28,7 +28,7 @@ export default function ProductItem( { designer }) {
                 </div>
                 
                 <Col className="works">
-                    <h4 style={{ width:"100%", marginTop:"1rem", textAlign:"left", padding:"5px", color:"#FFC72D"}}>Design Pices</h4>
+                    <h4 style={{ width:"100%", marginTop:"1rem", textAlign:"left", padding:"5px", color:"#FFC72D"}}>Design Pieces</h4>
                     <div className="designer-work">
                         <div className="designer-work1">
                             <img 

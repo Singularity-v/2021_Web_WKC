@@ -1,7 +1,7 @@
-  
 import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import { Button, Drawer } from 'antd';
+import CartSummary from './CartSummary';
 
 export default function NavBar()    {
     return (
@@ -24,7 +24,7 @@ export default function NavBar()    {
                 <div className=" header-icon ">
                     <img className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-search.png"/>
                     <img className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-account.png"/>
-                    <img className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-cart.png"/> 
+                    <CartSummary/>
                 </div>
             </div> 
     

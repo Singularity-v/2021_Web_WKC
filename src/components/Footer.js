@@ -1,4 +1,3 @@
-import { Row, Col } from "antd";
 export default function Footer(){
     return(
         <footer className="footer">
@@ -20,8 +19,8 @@ export default function Footer(){
             <div className=" footer-container" style={{ display:"flex", justifyContent:"center"}}>
                 <div className="footer-down">
                         <div className="your-home footer-container">
-                            <h3  style={{ margin:"0", color:"#FFC72D" }}>Your Home</h3>
-                            <p >have a nice day.</p>   
+                            <h4 className="header-title" style={{ margin:"0" }}>Your Home</h4>
+                            <p className="header-title">have a nice day.</p>   
 
                         </div>
                         <div className=" footer-container  footer-down-right">

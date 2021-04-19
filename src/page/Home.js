@@ -1,13 +1,15 @@
-import {useContext} from "react";
-import {StoreContext} from "../App"
-import {Layout} from 'antd';
+import { useContext } from "react";
+import { Layout } from 'antd';
 import AppHeader from "../components/Header" 
 import ProductList from "../components/ProductList" 
 import AppFooter from "../components/Footer" 
+import { StoreContext } from "../store"
+
 
 const {Header,Content,Footer} = Layout;
+
 function Home(){
-    const {title} = useContext(StoreContext);
+    const { title } = useContext(StoreContext);
     return(
         <div>
         <Layout className=" main-layout">
@@ -17,12 +19,12 @@ function Home(){
             <Content classNmae="layout-content">
                 <ProductList />
             </Content>
-            </Layout> 
-            <Layout>
-                <Footer className="layout-footer">
-                    <AppFooter />
-                </Footer>
-            </Layout>
+        </Layout> 
+        <Layout>
+            <Footer className="layout-footer">
+                <AppFooter />
+            </Footer>
+        </Layout>
         </div>
    
 

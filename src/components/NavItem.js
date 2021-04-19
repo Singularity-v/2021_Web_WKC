@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../store";
-import { pageContentsSet, activeNavItemSet } from "../actions";
+import { pageContentsSet, activeNavItemSet } from "../action";
 
 
 export default function NavItem(props) {
