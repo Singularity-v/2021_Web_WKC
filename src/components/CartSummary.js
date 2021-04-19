@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import {  useContext } from "react";
 import { Badge } from "antd";
 import { CartIcon } from "./Icon";
 import { StoreContext } from "../store"

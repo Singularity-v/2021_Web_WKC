@@ -1,8 +1,7 @@
-import { useState,useContext } from "react";
+import { useState } from "react";
 import { Row, Col } from "antd";
 import { Select } from 'antd';
 import AddToCart from "./AddToCart"
-import { StoreContext } from "../store"
 
 
 const { Option } = Select;
@@ -94,7 +93,7 @@ function ProductDetail({product}) {
             <Row className="shop-container" gutter={[16, 32]}>
             
                 <Col lg={{span:1}} >
-                    <button type="button" className="related-btn"> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-privious.png"/></button>
+                    <button type="button" className="related-btn"> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-privious.png"  alt=""/></button>
                 </Col>
                 <Col lg={{ span:17 }} sm={{ span:16 }} xs={{ span:16 }}>
                     <div className="related-products-images">
@@ -115,7 +114,7 @@ function ProductDetail({product}) {
                 </Col>
                 <Col  lg={{span:1}} >
                     <div className="btn2">
-                        <button type="button" className="related-btn "> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-next.png"/></button>
+                        <button type="button" className="related-btn "> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-next.png"  alt=""/></button>
                     </div>
                 </Col>
             </Row>
