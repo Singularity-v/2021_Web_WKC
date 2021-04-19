@@ -1,5 +1,5 @@
 import { Button, Select } from "antd";
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../store"
 import Cookie from "js-cookie"
@@ -7,7 +7,7 @@ import { addCartItem, removeCartItem, setProductDetail } from "../action";
 import { FrownOutlined } from '@ant-design/icons';
 const { Option } = Select;
 
-export default function CartModal({ isModalVisible, toggleModal,product }) {
+export default function CartModal({ isModalVisible, toggleModal }) {
    const { state: { cartItems }, dispatch } = useContext(StoreContext);
    const handleCancel = () => toggleModal(!isModalVisible);
    // const [color, setColor] = useState();
