@@ -3,7 +3,6 @@ import { Layout } from 'antd';
 import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
 import CartModel from "../components/CartModal"
-import { StoreContext } from "../store"
 
 const { Header, Content, Footer } = Layout;
 

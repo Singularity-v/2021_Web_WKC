@@ -3,7 +3,6 @@ import { Row, Col } from "antd";
 import { Select } from 'antd';
 import AddToCart from "./AddToCart"
 import { StoreContext } from "../store"
-import { CART_ADD_ITEM } from "../utils/constants"
 
 
 const { Option } = Select;

@@ -1,9 +1,8 @@
-import { Modal, Button, Select } from "antd";
+import { Button, Select } from "antd";
 import { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../store"
 import Cookie from "js-cookie"
-import { CartIcon } from "./Icon";
 import { addCartItem, removeCartItem, setProductDetail } from "../action";
 import { FrownOutlined } from '@ant-design/icons';
 const { Option } = Select;

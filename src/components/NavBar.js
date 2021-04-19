@@ -1,6 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import React, { useState } from 'react';
-import { Button, Drawer } from 'antd';
 import CartSummary from './CartSummary';
 
 export default function NavBar()    {
