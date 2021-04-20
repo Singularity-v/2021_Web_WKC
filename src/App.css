@@ -713,6 +713,10 @@ ul {
   padding: 0;
 }
 
+.ant-btn-primary:hover{
+  background-color: #3e3f97;
+}
+
 .shop-top-right{
   display: flex;
   align-items: center;
