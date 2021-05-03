@@ -1,6 +1,7 @@
-import { createContext,useReducer  } from "react";
+import { createContext  } from "react";
 import products from "../json/products.json"
 import Cookie from "js-cookie"
+import useReducerWithThunk from "use-reducer-thunk";
 import { 
     SET_PAGE_TITLE,
     SET_NAVBAR_ACTIVEITEM,
@@ -58,14 +59,14 @@ const initialState = {
                 cartItems = state.cartItems.filter((x) => x.id !== action.payload);
                 return { ...state, cartItems };
                 case SET_PRODUCT_DETAIL:
-                  return { ...state, productDetail: action.payload };
+                  return { ...state, productDetail:{...state.productDetail,...action.payload} };
              
              default:
                 return state;
           }
        }
 export function StoreProvider(props) {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducerWithThunk(reducer, initialState, "example");
     const value = { state, dispatch };
 
    return (
