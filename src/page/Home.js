@@ -1,24 +1,18 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Layout } from 'antd';
-
 import AppHeader from "../components/Header" 
 import ProductList from "../components/ProductList" 
 import AppFooter from "../components/Footer" 
 import { StoreContext } from "../store"
+// import { getTitle } from "../utils";
+// import { pageContentsSet, activeNavItemSet } from "../action";
+// import { getJSON } from "../api";
 
-import { getTitle } from "../utils";
-import { setPage } from "../action";
 
 const {Header,Content,Footer} = Layout;
 
 function Home(){
-    const { state: { page: { title } }, dispatch } = useContext(StoreContext);
-
-    useEffect(() => {
-      const url = window.location.pathname;
-      setPage(dispatch, url, getTitle(url))
-    }, []);// eslint-disable-line react-hooks/exhaustive-deps  
-    // const { title } = useContext(StoreContext);
+    const { title } = useContext(StoreContext);
     // useEffect(() => {
     //     const url = window.location.pathname;
     //     pageContentsSet(dispatch, getTitle(url), getJSON(url));

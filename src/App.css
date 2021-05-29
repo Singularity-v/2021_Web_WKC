@@ -1014,8 +1014,6 @@ ul {
   width:50%;
   padding-right: 2.5rem;
   margin-right: 1rem;
-  display: flex;
-  align-items: center;
 }
 
 .shopping-content-price {
@@ -1099,12 +1097,6 @@ ul {
     margin-top: 2rem;
     padding: 0 1rem 0 1rem;
   }
-  .cart-color{
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: left;
-    justify-content: center;
-  }
   .cart-item-content {
     width: 100%;
     display: flex;
@@ -1148,6 +1140,12 @@ ul {
   .shopping-content-price {
     width: 100%;
     margin-left: auto;
+  }
+  .cart-color{
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    justify-content:center;
   }
   .cart-price {
     width: 100%;
@@ -1244,4 +1242,23 @@ ul {
   border-style: solid;
   border-width: 2px;
   box-shadow:  0px 3px 6px #00000029;
+}
+
+
+/* Checkout Steps */
+.checkout-steps {
+  font-size: 0.6rem;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+.checkout-steps > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 0.2rem;
+  font-weight: bold;
+}
+.checkout-steps > div.active {
+  border-top-color: #6366F2;
+  color: #6366F2;
 }
