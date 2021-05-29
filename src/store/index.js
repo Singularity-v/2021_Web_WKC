@@ -53,6 +53,12 @@ try {
   userInfo = null;
 }
 
+let shippingAddress;
+try {
+   shippingAddress = JSON.parse(localStorage.getItem('shippingAdress'));
+}catch(e) {
+   shippingAddress = {};
+}
 
 const initialState = {
     page: {
@@ -83,6 +89,11 @@ const initialState = {
          userInfo: null,
          error: "",
       },
+      cart: {
+         cartItems,
+         shippingAddress,
+         paymentMethod:"Google"
+      }
  };
  
  function reducer(state, action) {

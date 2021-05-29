@@ -1,7 +1,7 @@
 import { useEffect, useContext } from "react";
-import { UserOutlined, UserSwitchOutlined } from '@ant-design/icons';
+// import { UserOutlined, UserSwitchOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
-
+import { PofileIcon } from "./Icon";
 import { StoreContext } from "../store"
 
 export default function UserInfo(props) {
@@ -22,12 +22,14 @@ export default function UserInfo(props) {
 
    return (
       <>
+
          <nav onClick={goToProfile} style={{ ...props.style }} className="header-cart-summary" >
-            {userInfo
+            {/* {userInfo
                ? <UserOutlined style={{ fontSize: '28px', color: '#ddd' }} />
                : <UserSwitchOutlined style={{ fontSize: '28px', color: '#ddd' }} />
-
-            }
+               
+            } */}
+             <PofileIcon size={20}/>
             <p className="cart-summary-text">
                {userInfo
                   ? `${userInfo.displayName}'s`

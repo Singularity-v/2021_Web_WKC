@@ -10,12 +10,12 @@ const { Header, Content, Footer } = Layout;
 function Register(props) {
   const { redirect } = QueryString.parse(props.location.search);
   return (
-    <Layout className="container main-layout">
+    <Layout className="main-layout">
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
           <AppHeader title="Register Page" />
         </Header>
-        <Content className="layout-content">
+        <Content className="Register-content">
           <RegisterCard redirect={redirect} />
         </Content>
         <Footer className="layout-footer">
