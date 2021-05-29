@@ -5,15 +5,9 @@ import {
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
   SET_PRODUCT_DETAIL,
-  BEGIN_PRODUCTS_FEED,
-  SUCCESS_PRODUCTS_FEED,
-  FAIL_PRODUCTS_FEED,
-  BEGIN_PRODUCTS_REQUEST,
-  SUCCESS_PRODUCTS_REQUEST,
-  FAIL_PRODUCTS_REQUEST,
 } from "../utils/constants";
 
-import {getProducts, getProductById, feedProducts} from "../api/index.js";
+import {getProducts, getProductById} from "../api/index.js";
 
 export const addCartItem = (dispatch, product, qty,col,colNum) => {
   const item = {
@@ -40,20 +34,8 @@ export const removeCartItem = (dispatch, productId) => {
   });
 };
 
-export const feedJSONToFirebase = async (dispatch) => {
-  dispatch({ type: BEGIN_PRODUCTS_FEED });
-  try {
-    await feedProducts();
-    dispatch({ type: SUCCESS_PRODUCTS_FEED });
-  } catch (error) {
-    console.log(error);
-    dispatch({ type: FAIL_PRODUCTS_FEED, payload: error });
-  }
-}
-
 export const setProductDetail = async (dispatch, productId, qty,col,colNum) => {
-  dispatch({ type: BEGIN_PRODUCTS_REQUEST });
-  try{
+
     const product = await getProductById(productId);
 
     if(col==="")col="None";
@@ -75,11 +57,6 @@ export const setProductDetail = async (dispatch, productId, qty,col,colNum) => {
         colNum
       }
     })
-    dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
-  } catch (error) {
-    console.log(error);
-    dispatch({ type: FAIL_PRODUCTS_REQUEST, payload: error });
-  }
 
 }
 
@@ -99,10 +76,8 @@ export const setPage = async (dispatch, url, title) => {
       type: SET_NAVBAR_ACTIVEITEM,
       payload: url,
     });
-    dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
   } catch (error) {
     console.log(error);
-    dispatch({ type: FAIL_PRODUCTS_REQUEST, payload: error });
   }
 }
 // export const pageContentsSet = (dispatch, title, products) => {
