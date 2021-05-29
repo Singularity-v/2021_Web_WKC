@@ -8,7 +8,7 @@ export default function ProductItem( { product }) {
     const { dispatch } = useContext(StoreContext);
     return (
         <Card className="home-product">
-            <Link  to={`/product/${product.id}`}
+            <Link to={`/products/${product.id}`}
                 onClick={() =>{
                     setProductDetail(dispatch,product.id,1);
                 }}>

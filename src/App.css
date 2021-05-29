@@ -1014,6 +1014,8 @@ ul {
   width:50%;
   padding-right: 2.5rem;
   margin-right: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .shopping-content-price {
@@ -1096,6 +1098,12 @@ ul {
     width: 100%;
     margin-top: 2rem;
     padding: 0 1rem 0 1rem;
+  }
+  .cart-color{
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    justify-content: center;
   }
   .cart-item-content {
     width: 100%;
