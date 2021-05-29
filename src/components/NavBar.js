@@ -20,8 +20,8 @@ export default function NavBar()    {
                     </NavLink>
                 </div>
                 <div className=" header-icon ">
-                    <img className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-search.png" alt=" "/>
-                    <img className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-account.png" alt=" "/>
+                    <img alt="" className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-search.png"/>
+                    <img alt="" className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-account.png"/>
                     <CartSummary/>
                 </div>
             </div> 

@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { StoreContext } from "../store";
 import { setProductDetail } from "../action";
 
-export default function ProductItem( { product }) {
+export default function ShopProductItem( { product }) {
     const { dispatch } = useContext(StoreContext);
     return (
-        <Card className="home-product">
+        <Card className="shop-product">
             <Link  to={`/product/${product.id}`}
                 onClick={() =>{
                     setProductDetail(dispatch,product.id,1);
@@ -21,7 +21,7 @@ export default function ProductItem( { product }) {
                 <h5>
                     {product.name}
                 </h5>
-                <p >
+                <p>
                     {product.author}
                 </p>
             </div>

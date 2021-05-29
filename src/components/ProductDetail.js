@@ -1,17 +1,19 @@
-import { useState, useContext } from "react";
+import { useState,useContext } from "react";
 import { Row, Col } from "antd";
 import { Select } from 'antd';
 import AddToCart from "./AddToCart"
 import { StoreContext } from "../store"
 import { setProductDetail } from "../action";
 
+
 const { Option } = Select;
 
 
 function ProductDetail() {
+    const { state: { productDetail: { product, qty,col} }, dispatch } = useContext(StoreContext);
+    // const { dispatch } = useContext(StoreContext);
     // const [qty, setQty] = useState(product.countInStock > 0 ? 1 : 0);
-    const { state: { productDetail: { product, qty} }, dispatch } = useContext(StoreContext);
-    const [color, setColor] = useState();
+    // const [color, setColor] = useState();
 
    return (
        
@@ -37,29 +39,26 @@ function ProductDetail() {
                    
                 <p className="product-color">
                     <p> Color</p>
-                        {"   "}
                         <Select 
-                            defaultValue={color} 
+                            defaultValue={"None"} 
+                            Value={col} 
                             placeholder="Select color"
                             className="select-style shop-top-right-container"
-                            onChange={val=>setColor(val)}
-                            size="large"
+                            onChange={val => setProductDetail(dispatch, product.id,qty,product.color[val], val)}
+                            // onChange={val=>setColor(val)}
                         >
-                            {[...Array(product.color.length).keys()].map((x) => (
-                                <Option value={product.color[x]}>
-                                {product.color[x]}
-                                </Option>
+                            {[...Array(product.colorNum).keys()].map((x) => (
+                                <Option  key={x + 1} value={x}>{product.color[x]}</Option>
                             ))}
                         </Select>
                     </p>
                     <div>
                         <p className="product-detail-qty">
                             <p>Quantity </p>
-                            {"   "}
                             <Select 
                                 defaultValue={qty} 
                                 className="select-style"
-                                onChange={val=>setProductDetail(dispatch, product.id, val)}
+                                onChange={val => setProductDetail(dispatch, product.id, val,col)}
                             >
                                 {[...Array(product.countInStock).keys()].map((x) => (
                                     <Option key={x + 1} value={x + 1}>
@@ -70,7 +69,7 @@ function ProductDetail() {
                           
                         </p>
                     </div>
-                    <AddToCart product={product} qty={qty} />
+                    <AddToCart product={product} qty={qty} color={col}/>
                 </div>
             </Col>
         </Row>
@@ -95,28 +94,28 @@ function ProductDetail() {
             <Row className="shop-container" gutter={[16, 32]}>
             
                 <Col lg={{span:1}} >
-                    <button type="button" className="related-btn"> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-privious.png"  alt=""/></button>
+                    <button type="button" className="related-btn"> <img alt="" className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-privious.png"/></button>
                 </Col>
                 <Col lg={{ span:17 }} sm={{ span:16 }} xs={{ span:16 }}>
                     <div className="related-products-images">
                         <Col  lg={{span:6}} sm={{span:12}} id="photo">
                             
-                            <img className="products-image" src={product.detailproduct1} alt=""/>
+                            <img alt="" className="products-image" src={product.detailproduct1}/>
                         </Col>
                         <Col  lg={{span:6}} sm={{span:12}} xs={{ span:0 }}>
-                            <img className="products-image" src={product.detailproduct2} alt=""/>
+                            <img alt="" className="products-image" src={product.detailproduct2}/>
                         </Col>
                         <Col  lg={{span:6}} sm={{span:0}} xs={{ span:0 }}>
-                            <img className="products-image" src={product.detailproduct3} alt=""/>
+                            <img alt="" className="products-image" src={product.detailproduct3}/>
                         </Col>
                         <Col  lg={{span:6}} sm={{span:0}} xs={{ span:0 }}>
-                            <img className="products-image" src={product.detailproduct4} alt="" />
+                            <img alt="" className="products-image" src={product.detailproduct4}/>
                         </Col>
                     </div> 
                 </Col>
                 <Col  lg={{span:1}} >
                     <div className="btn2">
-                        <button type="button" className="related-btn "> <img className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-next.png"  alt=""/></button>
+                        <button type="button" className="related-btn "> <img alt="" className="related-arrow" src="https://raw.githubusercontent.com/shakuneko/icon/master/related-product-next.png"/></button>
                     </div>
                 </Col>
             </Row>

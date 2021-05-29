@@ -1,23 +1,17 @@
 import { useContext } from "react";
 import { Layout } from 'antd';
 import AppHeader from "../components/Header" 
-import ProductList from "../components/ProductList" 
+import Shopproduct from "../components/Shopproduct" 
 import AppFooter from "../components/Footer" 
 import { StoreContext } from "../store"
-// import { getTitle } from "../utils";
-// import { pageContentsSet, activeNavItemSet } from "../action";
-// import { getJSON } from "../api";
+
 
 
 const {Header,Content,Footer} = Layout;
 
-function Home(){
+function Shop(){
     const { title } = useContext(StoreContext);
-    // useEffect(() => {
-    //     const url = window.location.pathname;
-    //     pageContentsSet(dispatch, getTitle(url), getJSON(url));
-    //     activeNavItemSet(dispatch, url);
-    //   }, []);
+   
     return(
         <div>
         <Layout className=" main-layout">
@@ -25,7 +19,7 @@ function Home(){
                 <AppHeader title={title}/>
             </Header>
             <Content classNmae="layout-content">
-                <ProductList />
+                <Shopproduct />
             </Content>
         </Layout> 
         <Layout>
@@ -38,4 +32,4 @@ function Home(){
 
     );
 }
-export default Home;
+export default Shop;

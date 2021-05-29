@@ -1,7 +1,7 @@
-import { createContext  } from "react";
+import { createContext } from "react";
+import useReducerWithThunk from "use-reducer-thunk";
 import products from "../json/products.json"
 import Cookie from "js-cookie"
-import useReducerWithThunk from "use-reducer-thunk";
 import { 
     SET_PAGE_TITLE,
     SET_NAVBAR_ACTIVEITEM,
@@ -12,8 +12,9 @@ import {
  
 
  export const StoreContext = createContext();
- let cartItems = Cookie.getJSON("cartItems");
- if (!cartItems) cartItems = [];
+ let cartItems = Cookie.getJSON("cartItems")
+ ? JSON.parse(localStorage.getItem("cartItems"))
+  : [];
 
 const initialState = {
     page: {
@@ -24,6 +25,15 @@ const initialState = {
       activeItem: "/",
       },
       cartItems,
+      productDetail: {
+      product: {
+         image:[],
+         color:[]
+      },
+      qty: 1,
+      col:'None',
+      colNum:0
+  },
  };
  
  function reducer(state, action) {
@@ -59,14 +69,18 @@ const initialState = {
                 cartItems = state.cartItems.filter((x) => x.id !== action.payload);
                 return { ...state, cartItems };
                 case SET_PRODUCT_DETAIL:
-                  return { ...state, productDetail:{...state.productDetail,...action.payload} };
+                  return { ...state, productDetail:action.payload };
              
              default:
                 return state;
           }
        }
 export function StoreProvider(props) {
-    const [state, dispatch] = useReducerWithThunk(reducer, initialState, "example");
+   const [state, dispatch] = useReducerWithThunk(
+      reducer,
+      initialState,
+      "example"
+    );
     const value = { state, dispatch };
 
    return (
