@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import useReducerWithThunk from "use-reducer-thunk";
-import products from "../json/products.json"
 import Cookie from "js-cookie"
 import { 
    SET_PAGE_TITLE,
@@ -55,29 +54,36 @@ try {
 
 let shippingAddress;
 try {
-   shippingAddress = JSON.parse(localStorage.getItem('shippingAdress'));
-}catch(e) {
-   shippingAddress = {};
+  shippingAddress = JSON.parse(localStorage.getItem('shippingAddress'));
+} catch(e) {
+  shippingAddress = {};
+}
+
+let orderInfo_order;
+try {
+  orderInfo_order = JSON.parse(localStorage.getItem('orderInfo'));
+} catch(e) {
+  orderInfo_order = { id: "" };
 }
 
 const initialState = {
-    page: {
-       title: "Your Home",
-       products,
-    },
-    navBar: {
+      allProducts: [],
+      page: {
+         title: "Your Home",
+      products: [],
+      },
+      navBar: {
       activeItem: "/",
       },
       cartItems,
       productDetail: {
       product: {
-         image:[],
          color:[]
       },
       qty: 1,
       col:'None',
       colNum:0
-  },
+      },
       userSignin: {
          loading: false,
          userInfo,
@@ -90,9 +96,29 @@ const initialState = {
          error: "",
       },
       cart: {
-         cartItems,
-         shippingAddress,
-         paymentMethod:"Google"
+      cartItems,
+      shippingAddress,
+      paymentMethod: 'Google',
+      },
+      orderInfo: {
+         loading: false,
+         order: orderInfo_order,
+         success: false,
+         error: null,
+      },
+      orderDetail: {
+         loading: true,
+         order: { cartItems: []},
+         error: null,
+      },
+      requestProducts: {
+         loading: false,
+         error: null,
+      },
+      userOrders: {
+         loading: false,
+         orders: [],
+         error: "",
       }
  };
  

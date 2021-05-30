@@ -19,9 +19,9 @@ const firebaseConfig = {
 
 
 firebase.initializeApp(firebaseConfig);
-const productsCollectionRef = firebase.firestore().collection("product");
+const productsCollectionRef = firebase.firestore().collection("products");
 const productsDocRef = productsCollectionRef.doc("json");
-const allProductsCollectionRef = productsDocRef.collection("allproducts");
+const allProductsCollectionRef = productsDocRef.collection("allProducts");
 const allOrdersCollectionRef = firebase.firestore().collection("allOrders");
 
 const auth = firebase.auth();
@@ -96,10 +96,7 @@ export const updateUserInfoApi = async (email, password, displayName) => {
     await user.updatePassword(password);
   return user;
 }
-export const checkLoginApi = () => {
-  const user = auth.currentUser;
-  return user.uid?  true : false;
-}
+
 
 export const getOrderByUser = async () => {
   const user = auth.currentUser.uid;
@@ -111,10 +108,6 @@ export const getOrderByUser = async () => {
     jsonOrders.push(doc.data());
   });
   return jsonOrders;
-}
-
-export const signOut = () => {
-  auth.signOut();
 }
 
 export const getProducts = async (url) => {
@@ -133,3 +126,12 @@ export const getProducts = async (url) => {
   });
   return jsonProducts;
 }
+
+export const signOut = () => {
+  auth.signOut();
+}
+
+// export const checkLoginApi = () => {
+//   const user = auth.currentUser;
+//   return user.uid?  true : false;
+// }

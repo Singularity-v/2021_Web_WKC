@@ -1,25 +1,29 @@
 import { Layout } from "antd";
-import ShippingHeader from "../components/ShippingHeader";
-import PaymentMethodCard from "../components/PaymentMethodCard";
+
+import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
+import Feeder from "../components/Feeder.js";
+
 const { Header, Content, Footer } = Layout;
 
-function Payment() {
+function Feed() {
+  
   return (
     <Layout className="main-layout">
-      <Layout className="bg-gray main-area">
+      <Layout className="main-area">
         <Header className="layout-header">
-          <ShippingHeader title="Payment Method Page" step1 step2 step3 />
+          <AppHeader title="Fee JSON Page" />
         </Header>
-        <Content className="Payment-content">
-           <PaymentMethodCard />
+        <Content className="main-content">
+          <Feeder  />
         </Content>
         <Footer className="layout-footer">
           <AppFooter />
         </Footer>
       </Layout>
     </Layout>
+    
   );
 }
 
-export default Payment;
+export default Feed;
